@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.5 on win32)" generated="20220711 10:35:54.834" rpa="false" schemaversion="3">
+<suite id="s1" name="Login" source="D:\Latihan Robot\nopCommerce\Login.robot">
+<test id="s1-t1" name="Homepage" line="16">
+<kw name="Start Chrome">
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220711 10:35:55.236" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002AC18F89090&gt;</msg>
+<status status="PASS" starttime="20220711 10:35:55.236" endtime="20220711 10:35:55.236"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20220711 10:35:55.236" endtime="20220711 10:35:55.237"/>
+</kw>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20220711 10:35:55.240" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220711 10:35:55.239" endtime="20220711 10:35:58.314"/>
+</kw>
+<status status="PASS" starttime="20220711 10:35:55.235" endtime="20220711 10:35:58.314"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${browser_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220711 10:35:58.316" level="INFO">Opening url 'https://demo.nopcommerce.com/'</msg>
+<status status="PASS" starttime="20220711 10:35:58.316" endtime="20220711 10:36:00.267"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220711 10:36:00.273" endtime="20220711 10:36:00.537"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//div[@class="header-logo"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220711 10:36:00.606" level="INFO">Element '//div[@class="header-logo"]' is displayed.</msg>
+<status status="PASS" starttime="20220711 10:36:00.538" endtime="20220711 10:36:00.606"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//a[@class="ico-login"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220711 10:36:00.650" level="INFO">Element '//a[@class="ico-login"]' is displayed.</msg>
+<status status="PASS" starttime="20220711 10:36:00.611" endtime="20220711 10:36:00.650"/>
+</kw>
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>//a[@class="ico-login"]</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20220711 10:36:00.651" level="INFO">Clicking link '//a[@class="ico-login"]'.</msg>
+<status status="PASS" starttime="20220711 10:36:00.651" endtime="20220711 10:36:01.338"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220711 10:36:04.350" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220711 10:36:01.338" endtime="20220711 10:36:04.350"/>
+</kw>
+<status status="PASS" starttime="20220711 10:35:55.233" endtime="20220711 10:36:04.350"/>
+</test>
+<test id="s1-t2" name="LogIn" line="25">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//div[@class="header-logo"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220711 10:36:04.374" level="INFO">Element '//div[@class="header-logo"]' is displayed.</msg>
+<status status="PASS" starttime="20220711 10:36:04.350" endtime="20220711 10:36:04.374"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>//div[@class="form-fields"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20220711 10:36:04.397" level="INFO">Element '//div[@class="form-fields"]' is displayed.</msg>
+<status status="PASS" starttime="20220711 10:36:04.374" endtime="20220711 10:36:04.397"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@class="email"]</arg>
+<arg>Tester08@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220711 10:36:04.399" level="INFO">Typing text 'Tester08@gmail.com' into text field '//input[@class="email"]'.</msg>
+<status status="PASS" starttime="20220711 10:36:04.398" endtime="20220711 10:36:04.546"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>//input[@class="password"]</arg>
+<arg>12345678</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220711 10:36:04.550" level="INFO">Typing text '12345678' into text field '//input[@class="password"]'.</msg>
+<status status="PASS" starttime="20220711 10:36:04.549" endtime="20220711 10:36:04.664"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//button[@class="button-1 login-button"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220711 10:36:04.666" level="INFO">Clicking element '//button[@class="button-1 login-button"]'.</msg>
+<status status="PASS" starttime="20220711 10:36:04.665" endtime="20220711 10:36:06.588"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220711 10:36:09.601" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220711 10:36:06.595" endtime="20220711 10:36:09.601"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220711 10:36:09.613" endtime="20220711 10:36:12.349"/>
+</kw>
+<status status="PASS" starttime="20220711 10:36:04.350" endtime="20220711 10:36:12.350"/>
+</test>
+<status status="PASS" starttime="20220711 10:35:54.836" endtime="20220711 10:36:12.352"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
